@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\USER\\.virtualenvs\\Mir-93NUmO89\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\USER\\.virtualenvs\\Mir-93NUmO89\\Scripts\\python.exe",
+    "python.linting.enabled": true
 }

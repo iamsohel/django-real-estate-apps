@@ -1,9 +1,14 @@
+pipenv install django
+pipenv shell
+django-admin startproject vidly .
+python manage.py startapp listings
+
+--------------
 python manage.py help
 python manage.py createsuperuser
 python manage.py runserver
-pipenv shell
+
  python manage.py collectstatic
- python manage.py startapp listings
  python manage.py migrate
  python manage.py makemigrations
 
@@ -17,3 +22,7 @@ pipenv shell
  postgresdb
  postgres app
  pgadmin
+
+ -------------------
+  pip install pylint-django
+ .pylintrc file ->> load-plugins=pylint-django
