@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
+#from django.contrib.auth import authenticate, login as django_login, logout as django_logout
 from django.contrib.auth.models import User
+#from contacts.models import Contact
 
 # Create your views here.
 
@@ -8,8 +10,7 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-
-        user = auth.authenticate(username=username, password=password)
+        user = auth.authenticate(request, username=username, password=password)
 
         if user is not None:
             auth.login(request, user)
@@ -59,7 +60,15 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def logout(request):
-    return redirect('index')
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You are now logged out')
+        return redirect('index')
 
 def dashboard(request):
+    # user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+
+    # context = {
+    #     'contacts': user_contacts
+    # }
     return render(request, 'accounts/dashboard.html')

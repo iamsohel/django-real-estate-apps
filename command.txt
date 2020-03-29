@@ -26,3 +26,14 @@ python manage.py runserver
  -------------------
   pip install pylint-django
  .pylintrc file ->> load-plugins=pylint-django
+
+ ------------------------------
+ for mysql
+ --------------
+ pip install mysqlclient
+ 'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'mydb',
+        'USER': 'root',
+        'PASSWORD': 'YOUR_DB_PASSWORD',
+        'HOST': 'localhost',   
+        'PORT': '3306',
