@@ -37,3 +37,8 @@ python manage.py runserver
         'PASSWORD': 'YOUR_DB_PASSWORD',
         'HOST': 'localhost',   
         'PORT': '3306',
+
+---------------REST------
+pipenv install djangorestframework
+pipenv shell
+pipenv install django-cors-headers
